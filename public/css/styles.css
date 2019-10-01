@@ -1,0 +1,24 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+body {
+    background-color: #ffffff
+}
+
+.logo {
+    width: 134px;
+    height: 36px;
+}
+
+.nav-font {
+    font-size: 13px;
+    font-weight: 700;
+    color: black;
+}
+
+.nav-icon {
+    color: red;
+}
+
+#nav-search {
+    width: 420px;
+}
