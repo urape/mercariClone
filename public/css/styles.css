@@ -4,6 +4,35 @@ body {
     background-color: #ffffff
 }
 
+body {
+    display: flex;
+    flex-flow: column;
+}
+
+main {
+    min-height: 100vh
+}
+
+ul {
+    list-style: none;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+footer {
+    background-color: rgb(34, 34, 34);
+    color: white;
+    flex: 1;
+}
+
 .logo {
     width: 134px;
     height: 36px;
@@ -21,4 +50,21 @@ body {
 
 #nav-search {
     width: 420px;
+}
+
+.footer-cont {
+    padding: 0px;
+    font-size: 12px;
+}
+
+.footer-cont li {
+    margin-top: 16px;
+}
+
+.footer-cont a {
+    color: #ffffff;
+}
+
+.c-mark {
+    font-size: 12px;
 }
