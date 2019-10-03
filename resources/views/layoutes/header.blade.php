@@ -1,7 +1,7 @@
-<header class="container">
+<header class="container nav-color">
     <nav class="navbar row">
         <div class="ml-1 col-xs-2">
-            <a href="#">
+            <a href="./top">
                 <img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
                     alt="Mercari" class="logo">
             </a>
@@ -22,7 +22,7 @@
     <nav class="navbar">
         <div class="d-flex flex-row ml-1">
             <div class="mr-3">
-                <a class="" href="#">
+                <a class="" href="./category">
                     <svg aria-hidden="true" width="20" height="16" viewBox="0 0 20 16">
                         <path class="nav-icon" fill="currentColor" fill-rule="nonzero" d="M18.799 15.25h-11.5a1.25 1.25 0 1 1
                                         0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25
@@ -35,7 +35,7 @@
                 </a>
             </div>
             <div class="">
-                <a href="#">
+                <a href="./brand">
                     <svg aria-hidden="true" width="23" height="16" viewBox="0 0 23 16"
                         class="sc-csuQGl sc-caSCKo kspmux">
                         <path class="nav-icon" fill="currentColor" fill-rule="nonzero"

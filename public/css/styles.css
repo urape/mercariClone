@@ -1,10 +1,6 @@
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
 
 body {
-    background-color: #ffffff
-}
-
-body {
     display: flex;
     flex-flow: column;
 }
@@ -67,4 +63,30 @@ footer {
 
 .c-mark {
     font-size: 12px;
+}
+
+.sub-color {
+    background-color: #F5F5F5;
+}
+
+.exhibit {
+    background-color: #EA352D;
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+    font-size: 22px;
+}
+
+.major-category {
+    color: #FFFFFF;
+    font-size: 22px;
+    background-color: #EA352D;
+}
+
+.sub-category {
+    background-color: #FFFFFF;
+}
+
+.w-65 {
+    width: 65%;
 }

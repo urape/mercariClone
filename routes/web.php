@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('top');
 });
+
+Route::get('/top', function () {
+    return view('top');
+});
+
+Route::get('category', 'CategoryController@index');
+
+Route::get('brand', function () {
+    return view('brand');
+});
+
+Route::get('sell', function () {
+    return view('sell');
+});
