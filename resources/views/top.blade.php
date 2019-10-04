@@ -6,10 +6,10 @@
         人気のカテゴリー
     </h2>
     <div class="text-center">
-        <button class="ml-1 mr-1"><a class="" href="#">レディース</a></button>
-        <button class="ml-1 mr-1"><a class="" href="#">メンズ</a></button>
-        <button class="ml-1 mr-1"><a class="" href="#">家電・スマホ・カメラ</a></button>
-        <button class="ml-1 mr-1"><a class="" disabled" href="#">おもちゃ・ホビー・グッズ</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn"><a class="" href=" #">レディース</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn"><a class="" href="#">メンズ</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn"><a class="" href="#">家電・スマホ・カメラ</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn"><a class="" disabled" href="#">おもちゃ・ホビー・グッズ</a></button>
     </div>
 </div>
 <div class="sub-color">
@@ -40,10 +40,10 @@
         人気のブランド
     </h2>
     <div class="text-center">
-        <button class="ml-1 mr-1"><a class="" href="#">シャネル</a></button>
-        <button class="ml-1 mr-1"><a class="" href="#">ルイヴィトン</a></button>
-        <button class="ml-1 mr-1"><a class="" href="#">シュプリーム</a></button>
-        <button class="ml-1 mr-1"><a class="" disabled" href="#">ナイキ</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn""><a class="" href=" #">シャネル</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn""><a class="" href=" #">ルイヴィトン</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn""><a class="" href=" #">シュプリーム</a></button>
+        <button class="ml-1 mr-1 rounded-pill btn pop-btn""><a class="" disabled" href="#">ナイキ</a></button>
     </div>
 </div>
 <div class="sub-color">

@@ -90,3 +90,13 @@ footer {
 .w-65 {
     width: 65%;
 }
+
+.pop-btn {
+    background-color: #EFEFEF;
+}
+
+.pop-btn a {
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+}

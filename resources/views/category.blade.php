@@ -8,7 +8,7 @@
         <div class="row">
             @foreach($categories as $parent_category)
             <div class="col-4 mb-2">
-                <button>{{$parent_category['name']}}</button>
+                <button class="btn d-inline-block page-link text-dark">{{$parent_category['name']}}</button>
             </div>
             @endforeach
         </div>
