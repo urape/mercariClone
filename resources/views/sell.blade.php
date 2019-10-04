@@ -12,7 +12,7 @@
     <main>
         <section class="w-75 mx-auto sell-back">
             <h2 class="text-center mb-2 pt-3">商品の情報を入力</h2>
-            <form action="" class=" mt-2 pb-4">
+            <form action="" class="mt-2">
                 <div class="mb-4 border-top">
                     <div class="ml-5 mt-3">
                         <h3>
@@ -118,11 +118,13 @@
                         <p class="m-0">また、出品をもちまして<a href="#">加盟店規約</a>に同意したことになります。</p>
                         <div class="text-center mt-4">
                             <button class="btn btn-danger w-75">出品する</button>
-                            <a href="./top"><button class="btn btn-secondary mt-3 w-25">もどる</button></a>
                         </div>
                     </div>
                 </div>
             </form>
+            <div class="text-center pb-5">
+                <a href="./top"><button class="btn btn-secondary mt-3 w-25">もどる</button></a>
+            </div>
         </section>
     </main>
     <footer class="mt-5 mb-5 mx-auto">
