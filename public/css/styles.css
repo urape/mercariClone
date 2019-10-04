@@ -23,7 +23,7 @@ h3 {
     font-weight: 700;
 }
 
-footer {
+.main-footer {
     background-color: rgb(34, 34, 34);
     color: white;
     flex: 1;
@@ -99,4 +99,46 @@ footer {
     color: black;
     font-weight: 700;
     font-size: 14px;
+}
+
+.sell-header-img {
+    width: 180px;
+    height: 50px;
+}
+
+.sell-back {
+    background-color: #FFFFFF;
+}
+
+.form-require {
+    color: #FFFFFF;
+    font-size: 90%;
+    background-color: #EA352D;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.supplement {
+    color: #333333;
+    font-size: 90%;
+}
+
+.sell-upload-drop-file {
+    background-color: #F5F5F5;
+    height: 150px;
+    font-size: 14px;
+}
+
+.precaution p {
+    font-size: 14px;
+    color: #333333;
+}
+
+.sell-footer {
+    font-size: 12px;
+    color: #333333;
+}
+
+.sell-footer a {
+    color: #333333;
 }

@@ -1,4 +1,4 @@
-<footer>
+<footer class="main-footer">
     <div>
         <img src="../public/images/top3.png" alt="" class="w-100">
     </div>
