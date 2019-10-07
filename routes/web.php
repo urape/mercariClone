@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('top');
-});
+Route::get('/', 'TopController@index');
 
-Route::get('/top', function () {
-    return view('top');
-});
+Route::get('top', 'TopController@index');
 
 Route::get('category', 'CategoryController@index');
 

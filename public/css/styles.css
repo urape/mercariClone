@@ -142,3 +142,7 @@ h3 {
 .sell-footer a {
     color: #333333;
 }
+
+.drop-hover:hover>.dropdown-menu {
+    display: block !important;
+}
