@@ -146,3 +146,11 @@ h3 {
 .drop-hover:hover>.dropdown-menu {
     display: block !important;
 }
+
+.dropdown-list {
+    font-size: 14px;
+}
+
+.items {
+    max-width: 188px;
+}

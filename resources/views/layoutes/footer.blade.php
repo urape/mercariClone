@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div>
-        <img src="../public/images/top3.png" alt="" class="w-100">
+        <img src="{{asset('/images/top3.png')}}" alt="" class="w-100">
     </div>
     <div class="container">
         <div class="row mt-4">
