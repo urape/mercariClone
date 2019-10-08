@@ -44,27 +44,6 @@
                     </div>
                 </div>
             </div>
-            <div class="">
-                <svg aria-hidden="true" width="23" height="16" viewBox="0 0 23 16" class="sc-csuQGl sc-caSCKo kspmux">
-                    <path class="nav-icon" fill="currentColor" fill-rule="nonzero"
-                        d="M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z">
-                    </path>
-                </svg>
-                <div class="btn-group p-0">
-                    <div class="dropdown drop-hover">
-                        <span class="dropdown-toggle nav-font" id="nav-brand" data-toggle="dropdown">ブランドから探す</span>
-                        <ul class="dropdown-menu">
-                            <li class="dropright drop-hover">
-                                <a href="#" class="dropdown-item dropdown-toggle dropdown-list"
-                                    data-toggle=" dropdown">メニュー1</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropright"><a href="#" class="dropdown-item dropdown-list">aa</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="d-flex mr-3">
             <div class="mr-3">
