@@ -1,5 +1,5 @@
 <header class="container nav-color">
-    <nav class="navbar row">
+    <nav class="navbar row pb-0">
         <div class="ml-1 col-xs-2">
             <a href="/mercariClone/public/top">
                 <img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
@@ -19,7 +19,7 @@
             </div>
         </form>
     </nav>
-    <nav class="navbar">
+    <nav class="navbar pt-0">
         <div class="d-flex flex-row ml-1">
             <div class="mr-3">
                 <svg aria-hidden="true" width="20" height="16" viewBox="0 0 20 16">
@@ -68,8 +68,17 @@
         </div>
         <div class="d-flex mr-3">
             <div class="mr-3">
-                <button class="btn btn-danger btn-sm">新規会員登録</button>
-                <button class="btn btn-outline-primary btn-sm">ログイン</button>
+                @if(Auth::check())
+                <button id="logout" class="btn btn-outline-primary btn-sm">ログアウト</button>
+                <form id="logout-form" class="m-0" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                @else
+                <button class="btn btn-danger btn-sm"
+                    onclick="location.href='/mercariClone/public/register'">新規会員登録</button>
+                <button class="btn btn-outline-primary btn-sm"
+                    onclick="location.href='/mercariClone/public/login'">ログイン</button>
+                @endif
             </div>
         </div>
     </nav>

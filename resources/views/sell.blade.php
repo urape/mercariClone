@@ -145,7 +145,4 @@
 
     </footer>
 </body>
-
 @include('layoutes.script')
-
-</html>

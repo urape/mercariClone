@@ -190,3 +190,12 @@ h3 {
 .comment-caution {
     background-color: #FFF6DD;
 }
+
+.auth-button {
+    color: #FFFFFF;
+}
+
+.err-msg {
+    color: #EC413A;
+    font-size: 14px;
+}

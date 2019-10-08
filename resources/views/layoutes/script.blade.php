@@ -1,3 +1,11 @@
+@if(Auth::check())
+<script>
+    document.getElementById('logout').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('logout-form').submit();
+    });
+</script>
+@endif
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
