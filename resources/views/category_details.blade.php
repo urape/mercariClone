@@ -12,7 +12,7 @@
                 <div class="row">
                     @foreach ($items as $item)
                     <div class="col-3">
-                        <a href="#">
+                        <a href="/mercariClone/public/item/{{$item['id']}}">
                             <figure class="">
                                 <div class=""><img
                                         src="https://static.mercdn.net/thumb/photos/m92592604068_1.jpg?1570157115"
@@ -29,3 +29,4 @@
         </div>
     </div>
     @endsection
+    @include('layoutes.sell')

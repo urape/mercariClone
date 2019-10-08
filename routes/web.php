@@ -12,13 +12,12 @@
 */
 
 Route::get('/', 'TopController@index');
-
 Route::get('top', 'TopController@index');
 
 Route::get('category', 'CategoryController@index');
-
 Route::get('category/{category_id?}', 'CategoryController@show');
 
+Route::get('item/{item_id}', 'ItemController@show');
 Route::get('brand', function () {
     return view('brand');
 });

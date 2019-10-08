@@ -1,3 +1,5 @@
+@section('footer')
+
 <footer class="main-footer">
     <div>
         <img src="{{asset('/images/top3.png')}}" alt="" class="w-100">
@@ -71,3 +73,4 @@
         <div class=" w-100 ml-5 c-mark text-center">© 2019 Mercari</div>
     </div>
 </footer>
+@endsection

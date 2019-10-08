@@ -1,7 +1,7 @@
 @extends('layoutes.common')
 @section('content')
 <div class="pl-5 sub-color">
-    <h2 class="mt-5">
+    <h2 class="mt-3 pt-4">
         カテゴリー一覧
     </h2>
     <div class="container">
@@ -14,7 +14,7 @@
         </div>
     </div>
     @foreach($categories as $parent_category)
-    <div class="mt-5 mb-5 mx-auto w-65">
+    <div class="mt-5 mb-5 pb-2 mx-auto w-65">
         <div class="major-category pl-2">{{$parent_category['name']}}</div>
         <div class="sub-category pb-2">
             <div class="ml-3 pt-3 mb-3">
@@ -34,3 +34,5 @@
     @endforeach
 </div>
 @endsection
+@include('layoutes.sell')
+@include('layoutes.footer')

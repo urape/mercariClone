@@ -1,6 +1,6 @@
 @extends('layoutes.common')
 @section('content')
-@include('/layoutes/calousel')
+@include('layoutes.calousel')
 <div class="">
     <h2 class="text-center mt-5 mb-3">
         人気のカテゴリー
@@ -268,3 +268,5 @@
     </div>
 </div>
 @endsection
+@include('layoutes.sell')
+@include('layoutes.footer')

@@ -67,6 +67,7 @@ h3 {
 
 .sub-color {
     background-color: #F5F5F5;
+    min-height: 800px;
 }
 
 .exhibit {
@@ -75,6 +76,7 @@ h3 {
     right: 25px;
     bottom: 30px;
     font-size: 22px;
+    z-index: 3;
 }
 
 .major-category {
@@ -151,6 +153,40 @@ h3 {
     font-size: 14px;
 }
 
-.items {
-    max-width: 188px;
+.content-color {
+    background-color: #FFFFFF;
+}
+
+.item-price {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.item-tax {
+    font-size: 10px;
+}
+
+.item-shipping-fee {
+    font-size: 16px;
+}
+
+.item-detail-table tr th {
+    background-color: #FAFAFA;
+    font-size: 14px;
+    font-weight: normal;
+    width: 20%;
+}
+
+.item-detail-table tr td {
+    font-size: 14px;
+    font-weight: normal;
+    width: 30%;
+}
+
+.item-image {
+    background-color: #FAFAFA;
+}
+
+.comment-caution {
+    background-color: #FFF6DD;
 }
