@@ -13,7 +13,7 @@
 
 Auth::routes();
 Route::get('/', 'TopController@index');
-Route::get('top', 'TopController@index');
+Route::get('top', 'TopController@index')->name('top');
 
 Route::get('category', 'CategoryController@index');
 Route::get('category/{category_id?}', 'CategoryController@show');
@@ -25,4 +25,5 @@ Route::get('brand', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('sell', 'SellController@index');
+    Route::post('sell/create', 'SellController@create')->name('sell.create');
 });

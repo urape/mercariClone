@@ -5,7 +5,8 @@
     <main>
         <section class="w-75 mx-auto sell-back">
             <h2 class="text-center mb-2 pt-3">商品の情報を入力</h2>
-            <form action="" class="mt-2">
+            <form action="{{ route('sell.create') }}" method="post" class="mt-2">
+                @csrf
                 <div class="mb-4 border-top">
                     <div class="ml-5 mt-3">
                         <h3>
@@ -15,7 +16,7 @@
                         <p class="supplement">最大10枚までアップロードできます</p>
                         <div class="pr-5 w-100">
                             <div class="sell-upload-drop-file">
-                                <input type="file" class="" multiple="" name="image1" style="display: none;">
+                                <input type="file" class="" multiple="" name="image" style="display: none;">
                                 <div class="pt-5 text-center">
                                     <p>ドラッグアンドドロップ</p>
                                     <p>またはクリックしてファイルをアップロード</p>
@@ -32,7 +33,15 @@
                         </h3>
                         <div class="mb-4 pr-5 w-100">
                             <div class="">
-                                <input type="text" class="form-control w-100" placeholder=" 商品名(必須40文字まで)">
+                                <input type="text" name="name" value="{{old('name')}}" class="form-control w-100"
+                                    placeholder=" 商品名(必須40文字まで)">
+                                @if($errors->get('name'))
+                                <div class="err-msg">
+                                    @foreach($errors->get('name') as $message)
+                                    <p>{{ $message }}</p>
+                                    @endforeach
+                                </div>
+                                @endif
                             </div>
                         </div>
                         <h3>
@@ -41,11 +50,16 @@
                         </h3>
                         <div class="mt-3 pr-5 w-100">
                             <div class="">
-                                <textarea rows="5" placeholder="商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）
-                                    例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-                                    class="form-control w-100">
-                                </textarea>
+                                <textarea name="explanation" rows="5" value="{{old('explanation')}}"
+                                    class="form-control w-100"></textarea>
                             </div>
+                            @if($errors->get('explanation'))
+                            <div class="err-msg">
+                                @foreach($errors->get('explanation') as $message)
+                                <p>{{ $message }}</p>
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -60,19 +74,37 @@
                                     <select class="form-control w-100" name="category">
                                         <option value="">---</option>
                                         @foreach($categories as $category)
-                                        <option value="{{$category['id']}}">{{$category['name']}}</option>
+                                        <option value="{{$category['id']}}">
+                                            {{$category['name']}}
+                                        </option>
                                         @endforeach
                                     </select>
+                                    @if($errors->get('category'))
+                                    <div class="err-msg">
+                                        @foreach($errors->get('category') as $message)
+                                        <p>{{ $message }}</p>
+                                        @endforeach
+                                    </div>
+                                    @endif
                                 </div>
                                 <label class="mt-4">商品の状態</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100">
+                                    <select class="form-control w-100" name="status">
                                         <option value="">---</option>
                                         @foreach($statuses as $status)
-                                        <option value="{{$status['id']}}">{{$status['name']}}</option>
+                                        <option value="{{$status['id']}}">
+                                            {{$status['name']}}
+                                        </option>
                                         @endforeach
                                     </select>
+                                    @if($errors->get('status'))
+                                    <div class="err-msg">
+                                        @foreach($errors->get('status') as $message)
+                                        <p>{{ $message }}</p>
+                                        @endforeach
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -86,32 +118,59 @@
                                 <label>配送料の負担</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100">
+                                    <select class="form-control w-100" name="delivery">
                                         <option value="">---</option>
                                         @foreach($deliveries as $delivery)
-                                        <option value="{{$delivery['id']}}">{{$delivery['name']}}</option>
+                                        <option value="{{$delivery['id']}}">
+                                            {{$delivery['name']}}
+                                        </option>
                                         @endforeach
                                     </select>
+                                    @if($errors->get('delivery'))
+                                    <div class="err-msg">
+                                        @foreach($errors->get('delivery') as $message)
+                                        <p>{{ $message }}</p>
+                                        @endforeach
+                                    </div>
+                                    @endif
                                 </div>
                                 <label class="mt-4">発送元の地域</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100">
+                                    <select class="form-control w-100" name="area">
                                         <option value="">---</option>
                                         @foreach($areas as $area)
-                                        <option value="{{$area['id']}}">{{$area['name']}}</option>
+                                        <option value="{{$area['id']}}">
+                                            {{$area['name']}}
+                                        </option>
                                         @endforeach
                                     </select>
+                                    @if($errors->get('area'))
+                                    <div class="err-msg">
+                                        @foreach($errors->get('area') as $message)
+                                        <p>{{ $message }}</p>
+                                        @endforeach
+                                    </div>
+                                    @endif
                                 </div>
                                 <label class="mt-4">発送までの日数</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100">
+                                    <select class="form-control w-100" name="duration">
                                         <option value="">---</option>
                                         @foreach($durations as $duration)
-                                        <option value="{{$duration['id']}}">{{$duration['name']}}</option>
+                                        <option value="{{$duration['id']}}">
+                                            {{$duration['name']}}
+                                        </option>
                                         @endforeach
                                     </select>
+                                    @if($errors->get('duration'))
+                                    <div class="err-msg">
+                                        @foreach($errors->get('duration') as $message)
+                                        <p>{{ $message }}</p>
+                                        @endforeach
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -124,8 +183,16 @@
                             <div class="">
                                 <label>価格</label>
                                 <span class="form-require">必須</span>
-                                <input type=" text" class="form-control d-inline float-right w-50" placeholder="例）300">
+                                <input type="text" name="price" class="form-control d-inline float-right w-50"
+                                    placeholder="例）300">
                             </div>
+                            @if($errors->get('price'))
+                            <div class="err-msg">
+                                @foreach($errors->get('price') as $message)
+                                <p>{{ $message }}</p>
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
