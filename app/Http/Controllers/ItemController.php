@@ -8,10 +8,10 @@ use App\Models\Item;
 
 class ItemController extends Controller
 {
-    public function show(Category $category, Item $item, $id)
+    public function show($id)
     {
-        $categories = $category->getCategories();
-        $item = $item->getItemDetail($id);
+        $categories = Category::all();
+        $item = Item::find($id);
         return view('item', [
             'categories' => $categories,
             'item' => $item

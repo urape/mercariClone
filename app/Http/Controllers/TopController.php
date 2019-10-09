@@ -7,9 +7,9 @@ use App\Models\Category;
 
 class TopController extends Controller
 {
-    public function index(Category $category)
+    public function index()
     {
-        $categories = $category->getCategories();
+        $categories = Category::all();
         return view('top', [
             'categories' => $categories
         ]);

@@ -5,7 +5,7 @@
         <div>
             <div class="mt-4 mb-5 pt-5">
                 <h2 class="d-inline ml-3">
-                    {{$category_name}}の商品一覧
+                    {{$category_name['name']}}の商品一覧
                 </h2>
             </div>
             <div class="container">

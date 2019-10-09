@@ -19,18 +19,4 @@ class Category extends Model
         }
         return $all_categories;
     }
-
-    // 親カテゴリー取得
-    public function getParentCategories()
-    {
-        $parent_categories = $this->whereNULL('parent_id')->select('id', 'name')->get()->toArray();
-        return $parent_categories;
-    }
-
-    // カテゴリー名取得
-    public function getCategoryName($id)
-    {
-        $category_name = $this->where('id', $id)->select('name')->first();
-        return $category_name['name'];
-    }
 }

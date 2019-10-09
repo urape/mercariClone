@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div>
-                <span class="item-price">¥{{$item['price']}}</span>
+                <span class="item-price">¥{{number_format($item['price'])}}</span>
                 <span class="item-tax ml-2"> (税込)</span>
                 <span class="item-shipping-fee">送料込み</span>
             </div>

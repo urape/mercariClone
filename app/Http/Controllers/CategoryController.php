@@ -18,11 +18,12 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function show(Category $category, Item $item, $id)
+    public function show($id)
     {
-        $categories = $category->getCategories();
-        $category_name = $category->getCategoryName($id);
-        $items = $item->getItems($id);
+        $categories = Category::all();
+        $category_name = Category::find($id);
+        $items = Item::where('category_id', $id)
+            ->get();
         return view('category_details', [
             'categories' => $categories,
             'category_name' => $category_name,
