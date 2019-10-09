@@ -34,5 +34,5 @@
     @endforeach
 </div>
 @endsection
-@include('layoutes.sell')
+@include('layoutes.sell_button')
 @include('layoutes.footer')

@@ -29,4 +29,4 @@
         </div>
     </div>
     @endsection
-    @include('layoutes.sell')
+    @include('layoutes.sell_button')

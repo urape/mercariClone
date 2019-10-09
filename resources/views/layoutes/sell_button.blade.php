@@ -1,4 +1,4 @@
-<a href="./sell"">
+<a href="/mercariClone/public/sell"">
         <div class=" text-white rounded-circle p-3 text-center exhibit" style="width: 160px;height: 160px;">
     <div class="mt-3">SELL</div>
     <svg aria-hidden="true" width="60" height="60" viewBox="0 0 18 16" class="">
