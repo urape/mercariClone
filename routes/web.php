@@ -23,6 +23,8 @@ Route::get('brand', function () {
     return view('brand');
 });
 
-Route::get('sell', function () {
-    return view('sell');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('sell', function () {
+        return view('sell');
+    });
 });
