@@ -57,12 +57,22 @@
                                 <label>カテゴリー</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100"></select>
+                                    <select class="form-control w-100" name="category">
+                                        <option value="">---</option>
+                                        @foreach($categories as $category)
+                                        <option value="{{$category['id']}}">{{$category['name']}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <label class="mt-4">商品の状態</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100"></select>
+                                    <select class="form-control w-100">
+                                        <option value="">---</option>
+                                        @foreach($statuses as $status)
+                                        <option value="{{$status['id']}}">{{$status['name']}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -76,17 +86,32 @@
                                 <label>配送料の負担</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100"></select>
+                                    <select class="form-control w-100">
+                                        <option value="">---</option>
+                                        @foreach($deliveries as $delivery)
+                                        <option value="{{$delivery['id']}}">{{$delivery['name']}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <label class="mt-4">発送元の地域</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100"></select>
+                                    <select class="form-control w-100">
+                                        <option value="">---</option>
+                                        @foreach($areas as $area)
+                                        <option value="{{$area['id']}}">{{$area['name']}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <label class="mt-4">発送までの日数</label>
                                 <span class="form-require">必須</span>
                                 <div class="">
-                                    <select class="form-control w-100"></select>
+                                    <select class="form-control w-100">
+                                        <option value="">---</option>
+                                        @foreach($durations as $duration)
+                                        <option value="{{$duration['id']}}">{{$duration['name']}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>

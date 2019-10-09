@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    // カテゴリー取得
+    // ,親に子を含めたカテゴリー取得
     public function getCategories()
     {
         // 親カテゴリー取得
@@ -18,6 +18,13 @@ class Category extends Model
             $all_categories[] = $category;
         }
         return $all_categories;
+    }
+
+    // 親カテゴリー取得
+    public function getParentCategories()
+    {
+        $parent_categories = $this->whereNULL('parent_id')->select('id', 'name')->get()->toArray();
+        return $parent_categories;
     }
 
     // カテゴリー名取得
