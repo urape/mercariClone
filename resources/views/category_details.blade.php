@@ -14,12 +14,12 @@
                     <div class="col-3">
                         <a href="/mercariClone/public/item/{{$item['id']}}">
                             <figure class="">
-                                <div class=""><img
-                                        src="https://static.mercdn.net/thumb/photos/m92592604068_1.jpg?1570157115"
+                                <div class=""><img src="{{asset("/storage/images/items/$item[image]")}}"
                                         alt="Thumbnail of &quot;{{$item['name']}}&quot;" class="img-fluid">
                                 </div>
                                 <figcaption><span>{{$item['name']}}</span></figcaption>
                                 <span aria-label="Price">¥{{$item['price']}}</span>
+                                <br>{{$item['image']}}
                             </figure>
                         </a>
                     </div>

@@ -39,7 +39,8 @@ class SellController extends Controller
         $item->explanation = $request->explanation;
         $item->price = $request->price;
         $next_id =  $item->max('id') + 1;
-        $item->image = $request->image->storeAs('public/images/items', $next_id . 'jpg');
+        $request->image->storeAs('public/images/items', $next_id . '.jpg'); //画像アップロード
+        $item->image = $next_id . '.jpg';
         $item->user_id = Auth::id();
         $item->status_id = $request->status;
         $item->name = $request->name;
