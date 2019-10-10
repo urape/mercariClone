@@ -26,6 +26,7 @@ class CreateItem extends FormRequest
         return [
             'name' => 'required|max:40',
             'explanation' => 'required|max:1000',
+            'image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
             'category' => 'required',
             'status' => 'required',
             'delivery' => 'required',
@@ -40,6 +41,7 @@ class CreateItem extends FormRequest
         return [
             'name' => '商品名',
             'explanation' => '商品の説明',
+            'image' => '画像',
             'category' => 'カテゴリー',
             'status' => '商品の状態',
             'delivery' => '配送料の負担',

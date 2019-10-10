@@ -23,6 +23,7 @@ class CategoryController extends Controller
         $categories = Category::all();
         $category_name = Category::find($id);
         $items = Item::where('category_id', $id)
+            ->orderBy('id', 'desc')
             ->get();
         return view('category_details', [
             'categories' => $categories,

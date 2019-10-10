@@ -199,3 +199,11 @@ h3 {
     color: #EC413A;
     font-size: 14px;
 }
+
+.custom-file {
+    overflow: hidden;
+}
+
+.custom-file-label {
+    white-space: nowrap;
+}

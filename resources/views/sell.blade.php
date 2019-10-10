@@ -1,11 +1,11 @@
 @include('layoutes.head')
 
 <body class="sub-color">
-    @include('layoutes.header_sub');
+    @include('layoutes.header_sub')
     <main>
         <section class="w-75 mx-auto sell-back">
             <h2 class="text-center mb-2 pt-3">商品の情報を入力</h2>
-            <form action="{{ route('sell.create') }}" method="post" class="mt-2">
+            <form action="{{ route('sell.create') }}" enctype="multipart/form-data" method="post" class="mt-2">
                 @csrf
                 <div class="mb-4 border-top">
                     <div class="ml-5 mt-3">
@@ -13,15 +13,24 @@
                             出品画像
                             <span class="form-require">必須</span>
                         </h3>
-                        <p class="supplement">最大10枚までアップロードできます</p>
+                        <p class="supplement">1アップロードできます</p>
                         <div class="pr-5 w-100">
-                            <div class="sell-upload-drop-file">
-                                <input type="file" class="" multiple="" name="image" style="display: none;">
-                                <div class="pt-5 text-center">
-                                    <p>ドラッグアンドドロップ</p>
-                                    <p>またはクリックしてファイルをアップロード</p>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="image" id="customFile">
+                                    <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-outline-secondary reset">取消</button>
                                 </div>
                             </div>
+                            @if($errors->get('image'))
+                            <div class="err-msg">
+                                @foreach($errors->get('image') as $message)
+                                <p>{{ $message }}</p>
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -50,8 +59,8 @@
                         </h3>
                         <div class="mt-3 pr-5 w-100">
                             <div class="">
-                                <textarea name="explanation" rows="5" value="{{old('explanation')}}"
-                                    class="form-control w-100"></textarea>
+                                <textarea name="explanation" rows="5"
+                                    class="form-control w-100">{{old('explanation')}}</textarea>
                             </div>
                             @if($errors->get('explanation'))
                             <div class="err-msg">
@@ -212,6 +221,6 @@
             </div>
         </section>
     </main>
-    @include('layoutes.footer_sub');
+    @include('layoutes.footer_sub')
 </body>
 @include('layoutes.script')
