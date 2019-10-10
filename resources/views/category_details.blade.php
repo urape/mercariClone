@@ -19,7 +19,6 @@
                                 </div>
                                 <figcaption><span>{{$item['name']}}</span></figcaption>
                                 <span aria-label="Price">¥{{$item['price']}}</span>
-                                <br>{{$item['image']}}
                             </figure>
                         </a>
                     </div>

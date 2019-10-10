@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+
+    public function items()
+    {
+        return $this->hasMany('App\Models\item');
+    }
+
     // ,親に子を含めたカテゴリー取得
     public function getCategories()
     {
