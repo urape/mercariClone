@@ -11,7 +11,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col6 w-50 item-image">
-                        AAAAAA
+                        <div class="">
+                            <div class="" style="">
+                                <div class="" style="">
+                                    <div class="">
+                                        <img alt="{{$item['name']}}" class="img-fluid w-75"
+                                            src="{{asset("/storage/images/items/$item[image]")}}" style="opacity: 1;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col6 w-50 pr-5">
                         <table class="table table-bordered item-detail-table ">
@@ -53,8 +62,8 @@
                 <span class="item-shipping-fee">送料込み</span>
             </div>
             <button type="button" class="btn btn-secondary w-75">売り切れました</button>
-            <div class="mt-4">
-                <p>{{$item['explanation']}}</p>
+            <div class="mt-4 ml-5 w-75 text-left">
+                {{$item['explanation']}}
             </div>
         </div>
     </div>
