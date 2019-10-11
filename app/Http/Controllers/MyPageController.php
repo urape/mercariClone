@@ -12,7 +12,7 @@ class MyPageController extends Controller
     {
         $categories = Category::all();
         $user = Auth::user();
-        return view('mypage', [
+        return view('mypage.index', [
             'categories' => $categories,
             'user' => $user,
         ]);
