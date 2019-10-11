@@ -23,14 +23,20 @@
                         </div>
                     </div>
                     <div class="col6 w-50 pr-5">
-                        <table class="table table-bordered item-detail-table ">
+                        <table class="table table-bordered item-detail-table">
                             <tr>
                                 <th class="text-left">出品者</th>
-                                <td class="text-left ">{{$item->user->name}}</td>
+                                <td class="text-left">
+                                    <a href="" class="detail-link">{{$item->user->name}}</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th class="text-left">カテゴリー</th>
-                                <td class="text-left">{{$item->category->name}}</td>
+                                <td class="text-left">
+                                    <a href="/mercariClone/public/category/{{$item->category->id}}" class="detail-link">
+                                        {{$item->category->name}}
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <th class="text-left">商品の状態</th>
@@ -85,3 +91,4 @@
     </div>
 </div>
 @endsection
+@include('layoutes.footer')

@@ -24,6 +24,7 @@ Route::get('brand', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('sell', 'SellController@index');
+    Route::get('mypage', 'MyPageController@index')->name('mypage');
+    Route::get('sell', 'SellController@index')->name('sell');
     Route::post('sell/create', 'SellController@create')->name('sell.create');
 });
