@@ -8,7 +8,10 @@
         <div class="row">
             @foreach($categories as $category)
             <div class="col-4 mb-2">
-                <button class="btn d-inline-block page-link text-dark">{{$category->name}}</button>
+                <button class="btn d-inline-block page-link text-dark"
+                    onclick="location.href='/mercariClone/public/category/{{$category->id}}'">
+                    {{$category->name}}
+                </button>
             </div>
             @endforeach
         </div>

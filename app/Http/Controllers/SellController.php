@@ -52,6 +52,6 @@ class SellController extends Controller
         $item->updated_at = Carbon::now();
         $item->save();
 
-        return redirect()->route('top');
+        return redirect()->route('item', $item->id);
     }
 }

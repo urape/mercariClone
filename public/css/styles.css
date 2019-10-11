@@ -207,3 +207,26 @@ h3 {
 .custom-file-label {
     white-space: nowrap;
 }
+
+.item {
+    position: relative;
+    background-color: #FFFFFF;
+}
+
+.item-box {
+    position: absolute;
+    bottom: 0;
+}
+
+.item-img {
+    object-fit: fill;
+}
+
+.row-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-body a {
+    color: black;
+}

@@ -18,7 +18,7 @@ Route::get('top', 'TopController@index')->name('top');
 Route::get('category', 'CategoryController@index');
 Route::get('category/{category_id?}', 'CategoryController@show');
 
-Route::get('item/{item_id}', 'ItemController@show');
+Route::get('item/{item_id}', 'ItemController@show')->name('item');
 Route::get('brand', function () {
     return view('brand');
 });
