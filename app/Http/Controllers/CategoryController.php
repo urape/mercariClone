@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Category;
+use App\Models\SubCategory;
 use App\Models\Item;
 
 class CategoryController extends Controller
 {
-    // 全カテゴリ取得
-    public function index(Category $category)
+    public function index()
     {
-        $categories = $category->getCategories();
+        $categories = Category::all();
         return view('category', [
-            'categories' => $categories
+            'categories' => $categories,
         ]);
     }
 

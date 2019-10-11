@@ -6,25 +6,27 @@
     </h2>
     <div class="container">
         <div class="row">
-            @foreach($categories as $parent_category)
+            @foreach($categories as $category)
             <div class="col-4 mb-2">
-                <button class="btn d-inline-block page-link text-dark">{{$parent_category['name']}}</button>
+                <button class="btn d-inline-block page-link text-dark">{{$category->name}}</button>
             </div>
             @endforeach
         </div>
     </div>
-    @foreach($categories as $parent_category)
+    @foreach($categories as $category)
     <div class="mt-5 mb-5 pb-2 mx-auto w-65">
-        <div class="major-category pl-2">{{$parent_category['name']}}</div>
+        <div class="major-category pl-2">{{$category->name}}</div>
         <div class="sub-category pb-2">
             <div class="ml-3 pt-3 mb-3">
-                <a href="#">すべて</a>
+                <a href="/mercariClone/public/category/{{$category->id}}">すべて</a>
             </div>
             <div class="ml-3">
                 <div>
-                    @foreach($parent_category['child'] as $child_category)
+                    @foreach($category->sub_categories as $sub_category)
                     <div class="mb-2">
-                        <a href="#">{{$child_category['name']}}</a>
+                        <a href="/mercariClone/public/category/{{$sub_category->id}}">
+                            {{$sub_category->name}}
+                        </a>
                     </div>
                     @endforeach
                 </div>

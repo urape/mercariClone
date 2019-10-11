@@ -30,7 +30,7 @@
                             <div class="form-group"">
                                 <label>パスワード</label>
                                 <span class=" form-require">必須</span>
-                                <input type="text" value="" name="password" placeholder="7文字以上" class="form-control"
+                                <input type="password" value="" name="password" placeholder="7文字以上" class="form-control"
                                     id="password">
                                 @if($errors->get('password'))
                                 <div class="err-msg">
