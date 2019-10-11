@@ -48,11 +48,7 @@
         <div class="d-flex mr-3">
             <div class="mr-3">
                 @if(Auth::check())
-                <a href="{{ route('mypage') }}">マイページ</a>
-                <button id="logout" class="btn btn-outline-primary btn-sm">ログアウト</button>
-                <form id="logout-form" class="m-0" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+                <a href="{{ route('mypage') }}" class="my-link">マイページ</a>
                 @else
                 <button class="btn btn-danger btn-sm"
                     onclick="location.href='/mercariClone/public/register'">新規会員登録</button>
