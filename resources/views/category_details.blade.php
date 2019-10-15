@@ -36,5 +36,7 @@
             </div>
         </div>
     </div>
-    @endsection
-    @include('layoutes.sell_button')
+</div>
+@endsection
+@include('layoutes.sell_button')
+@include('layoutes.footer')
