@@ -17,7 +17,7 @@
     <div class="ml-5 mr-5">
         @foreach ($pop_categories as $category)
         <div>
-            <div class="mt-4 mb-5 pt-5">
+            <div class="mt-4 mb-3 pt-5">
                 <h2 class="d-inline">
                     {{$category->category->name}}新着アイテム
                 </h2>
