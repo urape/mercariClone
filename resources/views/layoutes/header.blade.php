@@ -19,7 +19,7 @@
             </div>
         </form>
     </nav>
-    <nav class="navbar pt-0">
+    <nav class="navbar row pt-0">
         <div class="d-flex flex-row ml-1">
             <div class="mr-3">
                 <svg aria-hidden="true" width="20" height="16" viewBox="0 0 20 16">

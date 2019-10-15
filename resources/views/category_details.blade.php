@@ -18,7 +18,7 @@
                                 <figure class="">
                                     <div class="hoo">
                                         <div class="h-75">
-                                            <img src=" {{asset("/storage/images/items/$item->image")}}"
+                                            <img src="{{asset("/storage/images/items/$item->image")}}"
                                                 alt="Thumbnail of &quot;{{$item->name}}&quot;"
                                                 class="img-fluid item-img mb-5">
                                         </div>

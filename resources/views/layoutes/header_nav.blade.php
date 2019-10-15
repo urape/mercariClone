@@ -1,4 +1,4 @@
-<nav class="mb-0 border-top ">
+<nav class="mb-0 border-top">
     <ul class="list-inline ml-5">
         <li class="list-inline-item mr-0">
             <a href="{{route('top')}}" class="category-link">メルカリ</a>

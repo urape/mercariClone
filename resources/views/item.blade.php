@@ -81,7 +81,7 @@
             </button>
             @endif
             <div class="mt-4 ml-5 w-75 text-left">
-                {{$item->explanation}}
+                {!! nl2br(e($item->explanation))!!}
             </div>
         </div>
     </div>
