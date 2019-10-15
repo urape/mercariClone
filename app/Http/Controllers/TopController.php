@@ -11,7 +11,6 @@ class TopController extends Controller
     public function index(Item $item)
     {
         $categories = Category::all();
-
         // 過去10日間の人気カテゴリー取得
         $pop_categories = $item->getPopCategories();
 

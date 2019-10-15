@@ -21,7 +21,7 @@
                 <h2 class="d-inline">
                     {{$category->category->name}}新着アイテム
                 </h2>
-                <a href="#" class="float-right">もっと見る ></a>
+                <a href="{{route('category',$category->category_id)}}" class="float-right">もっと見る ></a>
             </div>
             <div class="container">
                 <div class="row">

@@ -21,7 +21,9 @@ class Item extends Model
 
         // 取得したカテゴリに属する商品を取得
         foreach ($pop_categories as $value) {
-            $value['items'] = Item::where('category_id', $value->category_id)->limit(10)->get();
+            $value['items'] = Item::where('category_id', $value->category_id)
+                ->orderBy('created_at', 'desc')
+                ->limit(10)->get();
         }
 
         return $pop_categories;

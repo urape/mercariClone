@@ -70,8 +70,18 @@
                 <span class="item-tax ml-2"> (税込)</span>
                 <span class="item-shipping-fee">送料込み</span>
             </div>
-            @if($item->buyer_id)
-            <button type="button" class="btn btn-secondary btn-lg disabled w-75">
+            @if($item->user_id === Auth::id())
+            <button type="button" class="btn btn-danger btn-lg w-75"
+                onclick="location.href='{{ route('item.update', ['item_id' => $item->id]) }}'">
+                商品の編集
+            </button>
+            <p>or</p>
+            <button type="button" class="btn btn-danger btn-lg w-75"
+                onclick="location.href='{{ route('item.delete', ['item_id' => $item->id]) }}'">
+                この商品を削除する
+            </button>
+            @elseif($item->buyer_id)
+            <button type="button" class="btn btn-secondary btn-lg disabled w-50">
                 売り切れました
             </button>
             @else
@@ -80,7 +90,7 @@
                 購入画面に進む
             </button>
             @endif
-            <div class="mt-4 ml-5 w-75 text-left">
+            <div class="mt-4 ml-5 w-75 text-left mx-auto">
                 {!! nl2br(e($item->explanation))!!}
             </div>
         </div>

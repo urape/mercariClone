@@ -211,13 +211,13 @@
                         <p class="m-0">またブランド品でシリアルナンバー等がある場合はご記載ください。<a href="#">偽ブランドの販売</a>は犯罪であり処罰される可能性があります。</p>
                         <p class="m-0">また、出品をもちまして<a href="#">加盟店規約</a>に同意したことになります。</p>
                         <div class="text-center mt-4">
-                            <button class="btn btn-danger w-75">出品する</button>
+                            <button class="btn btn-danger btn-lg w-75">出品する</button>
                         </div>
                     </div>
                 </div>
             </form>
             <div class="text-center pb-5">
-                <a href="./top"><button class="btn btn-secondary mt-3 w-25">もどる</button></a>
+                <a href="./top"><button class="btn btn-secondary btn-lg mt-3 w-25">もどる</button></a>
             </div>
         </section>
     </main>
