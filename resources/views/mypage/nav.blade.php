@@ -1,4 +1,4 @@
-<div class="mt-5">
+<div class="mt-5 pb-5">
     <nav>
         <ul class="list-group">
             <h3><a href="{{route('mypage')}}" class="my-link">マイページ</a></h3>
@@ -25,7 +25,7 @@
         <ul class="list-group mt-3">
             <h3>設定</h3>
             <li class="list-group-item"><a href="" class="my-link">プロフィール</a></li>
-            <li class="list-group-item"><a href="" class="my-link">メール/パスワード</a></li>
+            <li class="list-group-item"><a href="{{route('email_password')}}" class="my-link">メール/パスワード</a></li>
             <li class="list-group-item">
                 <form method="post" name="logout2" action="{{ route('logout') }}" class="d-inline">
                     @csrf

@@ -238,3 +238,20 @@ h3 {
 .my-link {
     color: #000000;
 }
+
+.mypage-content {
+    background-color: #FFFFFF;
+}
+
+.buy-content {
+    min-height: 500px;
+}
+
+.buy-item {
+    object-fit: fill;
+}
+
+.buy-price-cell {
+    font-weight: 700;
+    font-size: 28px;
+}

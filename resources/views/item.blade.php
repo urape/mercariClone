@@ -4,6 +4,9 @@
     <div class="ml-5 mr-5 pt-3 pb-1 w-75 mx-auto">
         <div class="text-center content-color pb-5">
             <div class="mt-4 mb-5 pt-5">
+                @if (Session::has('message'))
+                <p class="alert alert-success" role="alert">{{ session('message') }}</p>
+                @endif
                 <h2 class="d-inline ml-3">
                     {{$item->name}}
                 </h2>
@@ -67,7 +70,10 @@
                 <span class="item-tax ml-2"> (税込)</span>
                 <span class="item-shipping-fee">送料込み</span>
             </div>
-            <button type="button" class="btn btn-secondary w-75">売り切れました</button>
+            <button type="button" class="btn btn-danger btn-lg w-75"
+                onclick="location.href='{{ route('buy', ['item_id' => $item->id]) }}'">
+                購入画面に進む
+            </button>
             <div class="mt-4 ml-5 w-75 text-left">
                 {{$item->explanation}}
             </div>
@@ -82,7 +88,7 @@
                     <input type="hidden" name="redirect_url_key" value="#">
                     <textarea type="text" name="body" value="" class="w-75"></textarea>
                     <div></div>
-                    <button type="submit" class="btn btn-secondary w-75">
+                    <button type="submit" class="btn btn-secondary btn-lg w-75">
                         <span>コメントする</span>
                     </button>
                 </form>

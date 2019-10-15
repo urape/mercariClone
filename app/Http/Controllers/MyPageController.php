@@ -17,4 +17,14 @@ class MyPageController extends Controller
             'user' => $user,
         ]);
     }
+
+    public function email_password()
+    {
+        $categories = Category::all();
+        $user = Auth::user();
+        return view('mypage.email_password', [
+            'categories' => $categories,
+            'user' => $user,
+        ]);
+    }
 }
