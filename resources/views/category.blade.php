@@ -1,10 +1,11 @@
 @extends('layoutes.common')
 @section('content')
+@include('layoutes.header_nav')
 <div class="pl-5 sub-color">
-    <h2 class="mt-3 pt-4">
-        カテゴリー一覧
-    </h2>
     <div class="container">
+        <h2 class="mt-3 pt-4">
+            カテゴリー一覧
+        </h2>
         <div class="row">
             @foreach($categories as $category)
             <div class="col-4 mb-2">

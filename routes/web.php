@@ -15,8 +15,8 @@ Auth::routes();
 Route::get('/', 'TopController@index');
 Route::get('top', 'TopController@index')->name('top');
 
-Route::get('category', 'CategoryController@index');
-Route::get('category/{category_id?}', 'CategoryController@show');
+Route::get('category', 'CategoryController@index')->name('categories');
+Route::get('category/{category_id?}', 'CategoryController@show')->name('category');
 
 Route::get('item/{item_id}', 'ItemController@show')->name('item');
 Route::get('brand', function () {

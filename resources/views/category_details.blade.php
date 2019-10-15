@@ -1,11 +1,12 @@
 @extends('layoutes.common')
 @section('content')
+@include('layoutes.header_nav')
 <div class="sub-color">
     <div class="ml-5 mr-5 w-75 mx-auto">
         <div>
-            <div class="mt-4 mb-5 pt-5">
+            <div class="mb-5 pt-5">
                 <h2 class="d-inline ml-3">
-                    {{$category_name->name}}の商品一覧
+                    {{$category->name}}の商品一覧
                 </h2>
             </div>
             <div class="container">

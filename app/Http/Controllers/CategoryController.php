@@ -21,13 +21,13 @@ class CategoryController extends Controller
     public function show($id)
     {
         $categories = Category::all();
-        $category_name = Category::find($id);
+        $category = Category::find($id);
         $items = Item::where('category_id', $id)
             ->orderBy('id', 'desc')
             ->get();
         return view('category_details', [
             'categories' => $categories,
-            'category_name' => $category_name,
+            'category' => $category,
             'items' => $items
         ]);
     }
