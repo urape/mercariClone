@@ -26,17 +26,24 @@
             <div class="container">
                 <div class="row">
                     @foreach ($category->items as $item)
-                    <div class="col-3 content-color mr-1">
-                        <a href="#">
-                            <figure class="">
-                                <div class="">
-                                    <img src="{{asset("/storage/images/items/$item->image")}}"
-                                        alt="Thumbnail of &quot;{{$item->name}}&quot;" class="img-fluid">
-                                </div>
-                                <figcaption><span>{{$item->name}}</span></figcaption>
-                                <span aria-label="Price">¥{{$item->price}}</span>
-                            </figure>
-                        </a>
+                    <div class="col-2 mb-3 item mr-3">
+                        <div class="item-body">
+                            <a href="{{route('item',['item_id' => $item->id])}}">
+                                <figure class="">
+                                    <div class="hoo">
+                                        <div class="h-75 pb-4">
+                                            <img src="{{asset("/storage/images/items/$item->image")}}"
+                                                alt="Thumbnail of &quot;{{$item->name}}&quot;"
+                                                class="img-fluid item-img mb-5">
+                                        </div>
+                                        <div class="item-box mt-4">
+                                            <figcaption><span>{{$item->name}}</span></figcaption>
+                                            <span aria-label="Price">¥{{$item->price}}</span>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </a>
+                        </div>
                     </div>
                     @endforeach
                 </div>

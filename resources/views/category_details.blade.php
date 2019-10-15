@@ -17,7 +17,7 @@
                             <a href="/mercariClone/public/item/{{$item->id}}">
                                 <figure class="">
                                     <div class="hoo">
-                                        <div class="h-75">
+                                        <div class="h-75 pb-4">
                                             <img src="{{asset("/storage/images/items/$item->image")}}"
                                                 alt="Thumbnail of &quot;{{$item->name}}&quot;"
                                                 class="img-fluid item-img mb-5">
