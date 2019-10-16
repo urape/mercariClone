@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($category->items as $item)
-                    <div class="col-12 col-md-3 mb-3 item p-0 mr-2">
+                    <div class="col-12 col-md-2 mb-3 item p-0 mr-2">
                         <div class="item-body">
                             <a href="{{route('item',['item_id' => $item->id])}}">
                                 <figure class="">

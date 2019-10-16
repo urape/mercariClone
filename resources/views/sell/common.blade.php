@@ -5,7 +5,14 @@
     <main>
         <section class="w-75 mx-auto sell-back">
             <h2 class="text-center mb-2 pt-3">商品の情報を入力</h2>
-            <form action="{{ route('sell.create') }}" enctype="multipart/form-data" method="post" class="mt-2">
+            <form 
+                action=
+                @if ($action=='update' )
+                    {{ route('sell.update', $item->id)}}
+                @else
+                    {{ route('sell.create')}}
+                @endif 
+                enctype="multipart/form-data" method="post" class="mt-2">
                 @csrf
                 <div class="mb-4 border-top">
                     <div class="ml-5 mt-3">
@@ -42,8 +49,9 @@
                         </h3>
                         <div class="mb-4 pr-5 w-100">
                             <div class="">
-                                <input type="text" name="name" value="{{old('name')}}" class="form-control w-100"
-                                    placeholder=" 商品名(必須40文字まで)">
+                                <input type="text" name="name"
+                                    value="@if(isset($item)) {{$item->name}} @else {{old('name')}} @endif"
+                                    class="form-control w-100" placeholder=" 商品名(必須40文字まで)">
                                 @if($errors->get('name'))
                                 <div class="err-msg">
                                     @foreach($errors->get('name') as $message)
@@ -60,7 +68,7 @@
                         <div class="mt-3 pr-5 w-100">
                             <div class="">
                                 <textarea name="explanation" rows="5"
-                                    class="form-control w-100">{{old('explanation')}}</textarea>
+                                    class="form-control w-100">@if(isset($item)) {{$item->explanation}} @else {{old('explanation')}} @endisset</textarea>
                             </div>
                             @if($errors->get('explanation'))
                             <div class="err-msg">
@@ -83,8 +91,11 @@
                                     <select class="form-control w-100" name="category">
                                         <option value="">---</option>
                                         @foreach($categories as $category)
-                                        <option value="{{$category['id']}}">
-                                            {{$category['name']}}
+                                        <option value="{{$category->id}}" 
+                                            @if($category->id == old('category'))
+                                                selected
+                                            @endif>
+                                            {{$category->name}}
                                         </option>
                                         @endforeach
                                     </select>
@@ -102,8 +113,11 @@
                                     <select class="form-control w-100" name="status">
                                         <option value="">---</option>
                                         @foreach($statuses as $status)
-                                        <option value="{{$status['id']}}">
-                                            {{$status['name']}}
+                                        <option value="{{$status->id}}"
+                                            @if($status->id == old('status'))
+                                                selected
+                                            @endif>
+                                            {{$status->name}}
                                         </option>
                                         @endforeach
                                     </select>
@@ -130,8 +144,11 @@
                                     <select class="form-control w-100" name="delivery">
                                         <option value="">---</option>
                                         @foreach($deliveries as $delivery)
-                                        <option value="{{$delivery['id']}}">
-                                            {{$delivery['name']}}
+                                        <option value="{{$delivery->id}}"
+                                            @if($delivery->id == old('delivery'))
+                                                selected
+                                            @endif>
+                                            {{$delivery->name}}
                                         </option>
                                         @endforeach
                                     </select>
@@ -149,8 +166,11 @@
                                     <select class="form-control w-100" name="area">
                                         <option value="">---</option>
                                         @foreach($areas as $area)
-                                        <option value="{{$area['id']}}">
-                                            {{$area['name']}}
+                                        <option value="{{$area->id}}"
+                                            @if($area->id == old('area'))
+                                                selected
+                                            @endif>
+                                            {{$area->name}}
                                         </option>
                                         @endforeach
                                     </select>
@@ -168,8 +188,11 @@
                                     <select class="form-control w-100" name="duration">
                                         <option value="">---</option>
                                         @foreach($durations as $duration)
-                                        <option value="{{$duration['id']}}">
-                                            {{$duration['name']}}
+                                        <option value="{{$duration->id}}"
+                                            @if($duration->id == old('duration'))
+                                                selected
+                                            @endif>
+                                            {{$duration->name}}
                                         </option>
                                         @endforeach
                                     </select>
@@ -193,7 +216,7 @@
                                 <label>価格</label>
                                 <span class="form-require">必須</span>
                                 <input type="text" name="price" class="form-control d-inline float-right w-50"
-                                    placeholder="例）300">
+                            placeholder="例）300" value=@if(isset($item)){{$item->price}} @else {{old('price')}}@endif>
                             </div>
                             @if($errors->get('price'))
                             <div class="err-msg">
@@ -211,13 +234,13 @@
                         <p class="m-0">またブランド品でシリアルナンバー等がある場合はご記載ください。<a href="#">偽ブランドの販売</a>は犯罪であり処罰される可能性があります。</p>
                         <p class="m-0">また、出品をもちまして<a href="#">加盟店規約</a>に同意したことになります。</p>
                         <div class="text-center mt-4">
-                            <button class="btn btn-danger btn-lg w-75">出品する</button>
+                            @yield('content')
                         </div>
                     </div>
                 </div>
             </form>
             <div class="text-center pb-5">
-                <a href="./top"><button class="btn btn-secondary btn-lg mt-3 w-25">もどる</button></a>
+            <a href="{{route('top')}}"><button class="btn btn-secondary btn-lg mt-3 w-25">もどる</button></a>
             </div>
         </section>
     </main>

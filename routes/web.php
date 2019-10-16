@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('sell/create', 'SellController@create')->name('sell.create');
     Route::get('buy/{item_id}', 'BuyController@show')->name('buy');
     Route::post('buy/update/{id}', 'BuyController@update')->name('buy.update');
-    Route::post('item/update/{id}', 'BuyController@update')->name('item.update');
-    Route::post('item/delete/{id}', 'BuyController@delete')->name('item.delete');
+    Route::get('sell/edit/{item_id}', 'SellController@edit')->name('sell.edit');
+    Route::post('sell/update/{item_id}', 'SellController@update')->name('sell.update');
+    Route::post('item/delete', 'ItemController@delete')->name('item.delete');
 });
