@@ -21,12 +21,12 @@
                 <h2 class="d-inline">
                     {{$category->category->name}}新着アイテム
                 </h2>
-                <p><a href="{{route('category',$category->category_id)}}" class="text-left">もっと見る ></a></p>
+                <a href="{{route('category',$category->category_id)}}" class="text-left">もっと見る ></a>
             </div>
             <div class="container">
                 <div class="row">
                     @foreach ($category->items as $item)
-                    <div class="col-12 col-md-2 mb-3 item mr-1">
+                    <div class="col-12 col-md-3 mb-3 item p-0 mr-2">
                         <div class="item-body">
                             <a href="{{route('item',['item_id' => $item->id])}}">
                                 <figure class="">
