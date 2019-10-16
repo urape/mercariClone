@@ -264,5 +264,17 @@ h3 {
 
 .category-link {
     font-size: 14px;
-    color: black;
+    color:  #000000;
+}
+
+.link-font{
+    color: #000000;
+}
+
+.my-item{
+    min-height: 236px;
+}
+
+.no-selected{
+    background-color: #EEEEEE;
 }

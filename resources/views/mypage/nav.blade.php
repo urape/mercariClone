@@ -8,7 +8,7 @@
             <li class="list-group-item">
                 <a href="{{route('sell')}}" class="my-link">出品する</a></li>
             <li class="list-group-item">
-                <a href="{{route('mypage')}}" class="my-link">出品した商品 - 出品中</a></li>
+                <a href="{{route('exhibiting')}}" class="my-link">出品した商品 - 出品中</a></li>
             <li class="list-group-item">
                 <a href="{{route('mypage')}}" class="my-link">出品した商品 - 取引中</a>
             </li>

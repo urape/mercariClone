@@ -26,6 +26,9 @@ Route::get('brand', function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('mypage', 'MyPageController@index')->name('mypage');
     Route::get('mypage/email_password', 'MyPageController@email_password')->name('email_password');
+    Route::get('mypage/exhibiting', 'MyPageController@exhibiting')->name('exhibiting');
+    Route::get('mypage/progress', 'MyPageController@progress')->name('progress');
+    Route::get('mypage/completed', 'MyPageController@completed')->name('completed');
     Route::get('sell', 'SellController@index')->name('sell');
     Route::post('sell/create', 'SellController@create')->name('sell.create');
     Route::get('buy/{item_id}', 'BuyController@show')->name('buy');
