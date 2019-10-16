@@ -17,7 +17,9 @@ h3 {
     font-size: 15px;
     font-weight: 700;
 }
-
+a{
+    color: #000000;
+}
 .main-footer {
     background-color: rgb(34, 34, 34);
     color: white;
@@ -42,6 +44,9 @@ h3 {
 @media (min-width:960px) {
     #nav-search {
         width: 700px;
+    }
+    .my-page-body{
+        width: 80%;
     }
 }
 
@@ -277,4 +282,14 @@ h3 {
 
 .no-selected{
     background-color: #EEEEEE;
+}
+
+.my-item-img {
+    width: 48px;
+    height: 48px;
+    object-fit: fill;
+}
+
+.my-item-list:hover{
+    background-color: #FAFAFA;
 }

@@ -10,16 +10,16 @@
             <li class="list-group-item">
                 <a href="{{route('exhibiting')}}" class="my-link">出品した商品 - 出品中</a></li>
             <li class="list-group-item">
-                <a href="{{route('mypage')}}" class="my-link">出品した商品 - 取引中</a>
+                <a href="{{route('progress')}}" class="my-link">出品した商品 - 取引中</a>
             </li>
             <li class="list-group-item">
-                <a href="{{route('mypage')}}" class="my-link">出品した商品 - 売却済み</a>
+                <a href="{{route('completed')}}" class="my-link">出品した商品 - 売却済み</a>
             </li>
             <li class="list-group-item">
-                <a href="{{route('mypage')}}" class="my-link">出品した商品 - 取引中</a>
+                <a href="#" class="my-link">購入した商品 - 売却済み</a>
             </li>
             <li class="list-group-item">
-                <a href="{{route('mypage')}}" class="my-link">出品した商品 - 過去の取引</a>
+                <a href="#" class="my-link">購入した商品 - 取引中</a>
             </li>
         </ul>
         <ul class="list-group mt-3">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Auth;
+use App\Models\Item;
 
 class MyPageController extends Controller
 {
@@ -22,9 +23,14 @@ class MyPageController extends Controller
     {
         $categories = Category::all();
         $user = Auth::user();
+        $items = Item::where('user_id', $user->id)
+            ->whereNull('buyer_id')
+            ->orderBy('id', 'desc')
+            ->get();
         return view('mypage.exhibiting', [
             'categories' => $categories,
             'user' => $user,
+            'items' => $items
         ]);
     }
 
@@ -42,9 +48,14 @@ class MyPageController extends Controller
     {
         $categories = Category::all();
         $user = Auth::user();
+        $items = Item::where('user_id', $user->id)
+            ->whereNotNUll('buyer_id')
+            ->orderBy('id', 'desc')
+            ->get();
         return view('mypage.completed', [
             'categories' => $categories,
             'user' => $user,
+            'items' => $items
         ]);
     }
 
