@@ -13,19 +13,17 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col6 w-50 item-image">
+                    <div class="col-12 col-md-6 item-image">
                         <div class="">
                             <div class="" style="">
-                                <div class="" style="">
-                                    <div class="">
-                                        <img alt="{{$item->name}}" class="img-fluid w-75"
-                                            src="{{asset("/storage/images/items/$item->image")}}" style="opacity: 1;">
-                                    </div>
+                                <div class="">
+                                    <img alt="{{$item->name}}" class="img-fluid w-75"
+                                        src="{{asset("/storage/images/items/$item->image")}}" style="opacity: 1;">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col6 w-50 pr-5">
+                    <div class="col-12 col-md-6 w-50 mt-1">
                         <table class="table table-bordered item-detail-table">
                             <tr>
                                 <th class="text-left">出品者</th>

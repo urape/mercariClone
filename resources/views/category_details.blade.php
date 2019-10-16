@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="row row-height">
                     @foreach ($items as $item)
-                    <div class="col-2 mb-3 item mr-3">
+                    <div class="col-12 col-md-2 mb-3 item mr-1">
                         <div class="item-body">
                             <a href="/mercariClone/public/item/{{$item->id}}">
                                 <figure class="">
