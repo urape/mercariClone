@@ -24,6 +24,7 @@ class SearchController extends Controller
         ]);
     }
 
+    // 選択された検索条件を元にクエリを作成する
     private function createQuery($keyword, $request)
     {
         $query = Item::where('name', 'LIKE', "$keyword%");
@@ -52,7 +53,7 @@ class SearchController extends Controller
         if ($request->price) {
             switch ($request->price) {
                 case '300-1000':
-                    $query->whereBetween('price', [300, 100]);
+                    $query->whereBetween('price', [300, 1000]);
                     break;
                 case '1000-5000':
                     $query->whereBetween('price', [1000, 5000]);
