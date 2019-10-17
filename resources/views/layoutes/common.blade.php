@@ -3,12 +3,14 @@
 @include('layoutes.head')
 
 <body class="">
-    @include('layoutes.header')
-    <main>
-        @yield('content')
-    </main>
-    @yield('footer')
-    @include('layoutes.script')
+    <div id="wrapper">
+        @include('layoutes.header')
+        <main>
+            @yield('content')
+        </main>
+        @yield('footer')
+        @include('layoutes.script')
+    </div>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     </nav>
     <div class="text-center">
         <a href="./top" class="">
-            <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3761641567" alt="mercari"
+            <img src="{{asset('/images/logo-gray.svg')}}" alt="mercari"
                 width="80" height="65">
         </a>
         <p class="sell-footer mt-1">© 2019 Mercari</p>

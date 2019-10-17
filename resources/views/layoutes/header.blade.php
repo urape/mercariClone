@@ -2,7 +2,7 @@
     <nav class="navbar row pb-0">
         <div class="ml-1 col-xs-2">
         <a href="{{route('top')}}">
-                <img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
+        <img src="{{asset('/images/mercari_logo.svg')}}"
                     alt="Mercari" class="logo">
             </a>
         </div>

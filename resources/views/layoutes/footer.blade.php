@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="footer-logo ml-5 mb-5">
-        <img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg"
+        <img src="{{asset('/images/footer_logo.svg')}}"
             alt="Mercari" class="">
         <div class=" w-100 ml-5 c-mark text-center">© 2019 Mercari</div>
     </div>
