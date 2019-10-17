@@ -53,10 +53,12 @@
                 @if(Auth::check())
                 <a href="{{ route('mypage') }}" class="my-link">マイページ</a>
                 @else
-                <button class="btn btn-danger btn-sm"
-                    onclick="location.href='/mercariClone/public/register'">新規会員登録</button>
-                <button class="btn btn-outline-primary btn-sm"
-                    onclick="location.href='/mercariClone/public/login'">ログイン</button>
+                <button class="btn btn-danger btn-sm"onclick="location.href='{{route('register')}}'">
+                    新規会員登録
+                </button>
+                <button class="btn btn-outline-primary btn-sm"onclick="location.href='{{route('login')}}'">
+                    ログイン
+                </button>
                 @endif
             </div>
         </div>
