@@ -5,13 +5,13 @@
     <div class="container">
         <div class="row text-center">
             <div class="no-selected col-4 col-md-4 pt-2 pb-2">
-                <h3><a href="{{route('exhibiting')}}">出品中</a></h3>
+                <h3><a href="{{route('exhibiting')}}" class="b-link">出品中</a></h3>
             </div>
             <div class="no-selected col-4 col-md-4 pt-2 pb-2 m-0">
-                <h3><a href="{{route('progress')}}">取引中</a></h3>
+                <h3><a href="{{route('progress')}}" class="b-link">取引中</a></h3>
             </div>
             <div class="border-top border-danger col-4 col-md-4 pt-2 pb-2">
-                <h3><a href="{{route('completed')}}">売却済み</a></h3>
+                <h3><a href="{{route('completed')}}" class="b-link">売却済み</a></h3>
             </div>
         </div>
         <div class="my-item m-0">
@@ -21,7 +21,7 @@
                 @else
                 @foreach ($items as $item)
                 <li class="my-item-list">
-                    <a href="{{route('item',$item->id)}}">
+                    <a href="{{route('item',$item->id)}}" class="b-link">
                         <figure class="my-item-list">
                             <img src="{{asset("/storage/images/items/$item->image")}}" alt="" class="my-item-img">
                             {{$item->name}}
