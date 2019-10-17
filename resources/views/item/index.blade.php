@@ -78,6 +78,10 @@
                 この商品を削除する
             </button>
             @include('item.delete_modal')
+            @elseif($item->buyer_id === Auth::id())
+            <button type="button" class="btn btn-secondary btn-lg disabled w-50">
+                購入済み
+            </button>
             @elseif($item->buyer_id)
             <button type="button" class="btn btn-secondary btn-lg disabled w-50">
                 売り切れました

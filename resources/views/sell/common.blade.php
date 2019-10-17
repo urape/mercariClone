@@ -5,85 +5,84 @@
     <main>
         <section class="w-75 mx-auto sell-back">
             <h2 class="text-center mb-2 pt-3">商品の情報を入力</h2>
-            <form 
-                action=
-                @if ($action=='update' )
-                    {{ route('sell.update', $item->id)}}
-                @else
-                    {{ route('sell.create')}}
-                @endif 
-                enctype="multipart/form-data" method="post" class="mt-2">
+            <form action=@if ($action=='update' ) {{ route('sell.update', $item->id)}} @else {{ route('sell.create')}}
+                @endif enctype="multipart/form-data" method="post" class="mt-2">
                 @csrf
                 <div class="mb-4 border-top">
-                    <div class="ml-5 mt-3">
-                        <h3>
-                            出品画像
-                            <span class="form-require">必須</span>
-                        </h3>
-                        <p class="supplement">1アップロードできます</p>
-                        <div class="pr-5 w-100">
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="image" id="customFile">
-                                    <label class="custom-file-label" for="customFile" data-browse="参照">ファイル選択...</label>
+                    <div class="container">
+                        <div class="ml-5 mt-3">
+                            <h3>
+                                出品画像
+                                <span class="form-require">必須</span>
+                            </h3>
+                            <p class="supplement">1アップロードできます</p>
+                            <div class="pr-5 w-100">
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="image" id="customFile">
+                                        <label class="custom-file-label" for="customFile"
+                                            data-browse="参照">ファイル選択...</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-secondary reset">取消</button>
+                                    </div>
                                 </div>
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary reset">取消</button>
-                                </div>
-                            </div>
-                            @if($errors->get('image'))
-                            <div class="err-msg">
-                                @foreach($errors->get('image') as $message)
-                                <p>{{ $message }}</p>
-                                @endforeach
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-3 border-top">
-                    <div class="ml-5 mt-3">
-                        <h3>
-                            商品名
-                            <span class="form-require">必須</span>
-                        </h3>
-                        <div class="mb-4 pr-5 w-100">
-                            <div class="">
-                                <input type="text" name="name"
-                                    value="@if(isset($item)) {{$item->name}} @else {{old('name')}} @endif"
-                                    class="form-control w-100" placeholder=" 商品名(必須40文字まで)">
-                                @if($errors->get('name'))
+                                @if($errors->get('image'))
                                 <div class="err-msg">
-                                    @foreach($errors->get('name') as $message)
+                                    @foreach($errors->get('image') as $message)
                                     <p>{{ $message }}</p>
                                     @endforeach
                                 </div>
                                 @endif
                             </div>
                         </div>
-                        <h3>
-                            商品の説明
-                            <span class="form-require">必須</span>
-                        </h3>
-                        <div class="mt-3 pr-5 w-100">
-                            <div class="">
-                                <textarea name="explanation" rows="5"
-                                    class="form-control w-100">@if(isset($item)) {{$item->explanation}} @else {{old('explanation')}} @endisset</textarea>
+                    </div>
+                </div>
+                <div class="mt-3 border-top">
+                    <div class="ml-5 mt-3">
+                        <div class="container">
+                            <h3>
+                                商品名
+                                <span class="form-require">必須</span>
+                            </h3>
+                            <div class="mb-4 pr-5 w-100">
+                                <div class="">
+                                    <input type="text" name="name"
+                                        value="@if(isset($item)) {{$item->name}} @else {{old('name')}} @endif"
+                                        class="form-control w-100" placeholder=" 商品名(必須40文字まで)">
+                                    @if($errors->get('name'))
+                                    <div class="err-msg">
+                                        @foreach($errors->get('name') as $message)
+                                        <p>{{ $message }}</p>
+                                        @endforeach
+                                    </div>
+                                    @endif
+                                </div>
                             </div>
-                            @if($errors->get('explanation'))
-                            <div class="err-msg">
-                                @foreach($errors->get('explanation') as $message)
-                                <p>{{ $message }}</p>
-                                @endforeach
+                            <h3>
+                                商品の説明
+                                <span class="form-require">必須</span>
+                            </h3>
+                            <div class="mt-3 pr-5 w-100">
+                                <div class="">
+                                    <textarea name="explanation" rows="5"
+                                        class="form-control w-100">@if(isset($item)) {{$item->explanation}} @else {{old('explanation')}} @endisset</textarea>
+                                </div>
+                                @if($errors->get('explanation'))
+                                <div class="err-msg">
+                                    @foreach($errors->get('explanation') as $message)
+                                    <p>{{ $message }}</p>
+                                    @endforeach
+                                </div>
+                                @endif
                             </div>
-                            @endif
                         </div>
                     </div>
                 </div>
                 <div class="mt-4 mb-4 border-top container">
                     <div class="ml-5 mt-3 row">
-                        <div class="col">商品の詳細</div>
-                        <div class="col-8 pr-5 w-100 form-group d-inline">
+                        <div class="col-12 col-md-4">商品の詳細</div>
+                        <div class="col-12 col-md-8 pr-5 w-100 form-group d-inline">
                             <div class="">
                                 <label>カテゴリー</label>
                                 <span class="form-require">必須</span>
@@ -91,9 +90,8 @@
                                     <select class="form-control w-100" name="category">
                                         <option value="">---</option>
                                         @foreach($categories as $category)
-                                        <option value="{{$category->id}}" 
-                                            @if($category->id == old('category'))
-                                                selected
+                                        <option value="{{$category->id}}" @if($category->id == old('category'))
+                                            selected
                                             @endif>
                                             {{$category->name}}
                                         </option>
@@ -113,9 +111,8 @@
                                     <select class="form-control w-100" name="status">
                                         <option value="">---</option>
                                         @foreach($statuses as $status)
-                                        <option value="{{$status->id}}"
-                                            @if($status->id == old('status'))
-                                                selected
+                                        <option value="{{$status->id}}" @if($status->id == old('status'))
+                                            selected
                                             @endif>
                                             {{$status->name}}
                                         </option>
@@ -135,8 +132,8 @@
                 </div>
                 <div class="mt-4 mb-4 border-top container">
                     <div class="ml-5 mt-3 row">
-                        <div class="col">配送について</div>
-                        <div class="col-8 pr-5 w-100 form-group d-inline">
+                        <div class="col-12 col-md-4">配送について</div>
+                        <div class="col-12 col-md-8 pr-5 w-100 form-group d-inline">
                             <div class="">
                                 <label>配送料の負担</label>
                                 <span class="form-require">必須</span>
@@ -144,9 +141,8 @@
                                     <select class="form-control w-100" name="delivery">
                                         <option value="">---</option>
                                         @foreach($deliveries as $delivery)
-                                        <option value="{{$delivery->id}}"
-                                            @if($delivery->id == old('delivery'))
-                                                selected
+                                        <option value="{{$delivery->id}}" @if($delivery->id == old('delivery'))
+                                            selected
                                             @endif>
                                             {{$delivery->name}}
                                         </option>
@@ -166,9 +162,8 @@
                                     <select class="form-control w-100" name="area">
                                         <option value="">---</option>
                                         @foreach($areas as $area)
-                                        <option value="{{$area->id}}"
-                                            @if($area->id == old('area'))
-                                                selected
+                                        <option value="{{$area->id}}" @if($area->id == old('area'))
+                                            selected
                                             @endif>
                                             {{$area->name}}
                                         </option>
@@ -188,9 +183,8 @@
                                     <select class="form-control w-100" name="duration">
                                         <option value="">---</option>
                                         @foreach($durations as $duration)
-                                        <option value="{{$duration->id}}"
-                                            @if($duration->id == old('duration'))
-                                                selected
+                                        <option value="{{$duration->id}}" @if($duration->id == old('duration'))
+                                            selected
                                             @endif>
                                             {{$duration->name}}
                                         </option>
@@ -210,13 +204,14 @@
                 </div>
                 <div class="mt-4 mb-4 border-top container">
                     <div class="ml-5 mt-3 row">
-                        <div class="col">販売価格(300〜9,999,999)</div>
-                        <div class="col-8 pr-5 w-100 form-group d-inline">
+                        <div class="col-12 col-md-4">販売価格(300〜9,999,999)</div>
+                        <div class="col-12 col-md-8 pr-5 w-100 form-group d-inline">
                             <div class="">
                                 <label>価格</label>
                                 <span class="form-require">必須</span>
                                 <input type="text" name="price" class="form-control d-inline float-right w-50"
-                            placeholder="例）300" value=@if(isset($item)){{$item->price}} @else {{old('price')}}@endif>
+                                    placeholder="例）300" value=@if(isset($item)){{$item->price}} @else
+                                    {{old('price')}}@endif>
                             </div>
                             @if($errors->get('price'))
                             <div class="err-msg">
@@ -240,7 +235,7 @@
                 </div>
             </form>
             <div class="text-center pb-5">
-            <a href="{{route('top')}}"><button class="btn btn-secondary btn-lg mt-3 w-25">もどる</button></a>
+                <a href="{{route('top')}}"><button class="btn btn-secondary btn-lg mt-3">もどる</button></a>
             </div>
         </section>
     </main>
