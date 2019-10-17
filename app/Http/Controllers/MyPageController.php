@@ -26,7 +26,7 @@ class MyPageController extends Controller
         $items = Item::where('user_id', $user->id)
             ->whereNull('buyer_id')
             ->orderBy('id', 'desc')
-            ->get();
+            ->paginate(4);
         return view('mypage.exhibiting', [
             'categories' => $categories,
             'user' => $user,
@@ -51,7 +51,7 @@ class MyPageController extends Controller
         $items = Item::where('user_id', $user->id)
             ->whereNotNUll('buyer_id')
             ->orderBy('id', 'desc')
-            ->get();
+            ->paginate(4);
         return view('mypage.completed', [
             'categories' => $categories,
             'user' => $user,
@@ -75,7 +75,7 @@ class MyPageController extends Controller
         $user = Auth::user();
         $items = Item::where('buyer_id', $user->id)
             ->orderBy('id', 'desc')
-            ->get();
+            ->paginate(4);
         return view('mypage.purchased', [
             'categories' => $categories,
             'user' => $user,

@@ -29,6 +29,7 @@
                 @endif
             </ul>
         </div>
+        {{$items->links()}}
     </div>
 </div>
 
