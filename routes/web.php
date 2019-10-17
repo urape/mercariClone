@@ -29,6 +29,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('mypage/exhibiting', 'MyPageController@exhibiting')->name('exhibiting');
     Route::get('mypage/progress', 'MyPageController@progress')->name('progress');
     Route::get('mypage/completed', 'MyPageController@completed')->name('completed');
+    Route::get('mypage/purchase', 'MyPageController@purchase')->name('purchase');
+    Route::get('mypage/purchased', 'MyPageController@purchased')->name('purchased');
     Route::get('sell', 'SellController@index')->name('sell');
     Route::post('sell/create', 'SellController@create')->name('sell.create');
     Route::get('buy/{item_id}', 'BuyController@show')->name('buy');

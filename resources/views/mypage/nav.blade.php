@@ -16,10 +16,10 @@
                 <a href="{{route('completed')}}" class="my-link">出品した商品 - 売却済み</a>
             </li>
             <li class="list-group-item">
-                <a href="#" class="my-link">購入した商品 - 売却済み</a>
+            <a href="{{route('purchase')}}" class="my-link">購入した商品 - 取引中</a>
             </li>
             <li class="list-group-item">
-                <a href="#" class="my-link">購入した商品 - 取引中</a>
+            <a href="{{route('purchased')}}" class="my-link">購入した商品 - 取引済み</a>
             </li>
         </ul>
         <ul class="list-group mt-3">

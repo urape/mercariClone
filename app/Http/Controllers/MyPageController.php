@@ -59,6 +59,30 @@ class MyPageController extends Controller
         ]);
     }
 
+    public function purchase()
+    {
+        $categories = Category::all();
+        $user = Auth::user();
+        return view('mypage.purchase', [
+            'categories' => $categories,
+            'user' => $user,
+        ]);
+    }
+
+    public function purchased()
+    {
+        $categories = Category::all();
+        $user = Auth::user();
+        $items = Item::where('buyer_id', $user->id)
+            ->orderBy('id', 'desc')
+            ->get();
+        return view('mypage.purchased', [
+            'categories' => $categories,
+            'user' => $user,
+            'items' => $items
+        ]);
+    }
+
     public function email_password()
     {
         $categories = Category::all();
