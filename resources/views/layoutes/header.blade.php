@@ -7,10 +7,10 @@
             </a>
         </div>
         <div class="d-inline form-group">
-            <form action="#" class="form-inline col-xs-10 mr-4">
+            <form action="{{route('search')}}" class="form-inline col-xs-10 mr-4" method="get">
                 <div class="input-group">
-                    <input type="search" placeholder="何かお探しですか？" id="nav-search"
-                        class="input-group-prepen form-control">
+                    <input type="search" placeholder="何かお探しですか？" id="nav-search" class="input-group-prepen form-control"
+                        name="keyword" value="@isset($keyword) {{$keyword}} @endisset">
                     <button class="input-group-text">
                         <svg width="16" height="16" viewbox="0 0 16 16">
                             <path fill="currentColor" fill-rule="nonzero"

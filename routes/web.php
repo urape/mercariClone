@@ -14,7 +14,7 @@
 Auth::routes();
 Route::get('/', 'TopController@index');
 Route::get('top', 'TopController@index')->name('top');
-
+Route::get('search', 'SearchController@index')->name('search');
 Route::get('category', 'CategoryController@index')->name('categories');
 Route::get('category/{category_id?}', 'CategoryController@show')->name('category');
 
