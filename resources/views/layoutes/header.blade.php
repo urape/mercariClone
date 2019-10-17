@@ -1,7 +1,7 @@
 <header class="container nav-color">
     <nav class="navbar row pb-0">
         <div class="ml-1 col-xs-2">
-            <a href="/mercariClone/public/top">
+        <a href="{{route('top')}}">
                 <img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"
                     alt="Mercari" class="logo">
             </a>
