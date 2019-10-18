@@ -9,7 +9,7 @@
                 <div class="ml-5 mt-3">
                     <div class="mb-2">
                         <img alt="{{$item->name}}" class="buy-item w-25"
-                            src="{{asset("/storage/images/items/$item->image")}}" style="opacity: 1;">
+                            src="{{$item->image}}" style="opacity: 1;">
                     </div>
                     <h5>{{$item->name}}</h5>
                     <div class="buy-price-cell d-inline">支払い金額</div>
