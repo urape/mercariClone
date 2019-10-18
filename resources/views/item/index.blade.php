@@ -100,6 +100,7 @@
     <div class="ml-5 mr-5 pb-5 w-75 mx-auto">
         <div class="content-color text-center pb-5">
             <div class="pt-3">
+                @if(Auth::check())
                 <form action="#" method="POST" class="">
                     <input type="hidden" name="" value="">
                     <input type="hidden" name="item_id" value="#">
@@ -110,6 +111,7 @@
                         <span>コメントする</span>
                     </button>
                 </form>
+                @endif
             </div>
         </div>
     </div>
