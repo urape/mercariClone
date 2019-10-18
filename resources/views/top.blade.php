@@ -17,13 +17,13 @@
     <div class="ml-5 mr-5">
         @foreach ($pop_categories as $category)
         <div>
-            <div class="mt-4 mb-3 pt-5">
-                <h2 class="d-inline">
-                    {{$category->category->name}}新着アイテム
-                </h2>
-                <a href="{{route('category',$category->category_id)}}" class="text-left">もっと見る ></a>
-            </div>
             <div class="container">
+                <div class="mt-4 mb-3 pt-5">
+                    <h2 class="d-inline">
+                        {{$category->category->name}}新着アイテム
+                    </h2>
+                    <a href="{{route('category',$category->category_id)}}" class="text-left">もっと見る ></a>
+                </div>
                 <div class="row">
                     @foreach ($category->items as $item)
                     <div class="col-12 col-md-2 mb-3 item p-0 mr-2">
