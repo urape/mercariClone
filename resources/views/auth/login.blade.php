@@ -7,7 +7,7 @@
             <div class="content-color pb-5">
                 <div class="text-center mt-4 mb-4 pt-5">
                     <p class="supplement m-0">アカウントをお持ちでない方はこちら</p>
-                    <button class="btn btn-primary w-50" onclick="location.href='/mercariClone/public/register'">
+                    <button class="btn btn-primary w-50" onclick="location.href='{{route('register')}}'">
                         新規会員登録
                     </button>
                 </div>
