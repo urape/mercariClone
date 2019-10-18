@@ -8,12 +8,12 @@ use Carbon\Carbon;
 
 class Item extends Model
 {
-    // 過去10日間の人気カテゴリー取得
+    // 過去100日間の人気カテゴリー取得
     public function getPopCategories()
     {
         $date = Carbon::now();
         $pop_categories = Item::select(DB::raw('count(*) as count'), 'category_id')
-            ->where('created_at', '>=', $date->subDay(10))
+            ->where('created_at', '>=', $date->subDay(100))
             ->groupBy('category_id')
             ->orderBy('count', 'desc')
             ->limit(4)

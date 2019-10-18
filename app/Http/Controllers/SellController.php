@@ -41,9 +41,9 @@ class SellController extends Controller
         $item->name = $request->name;
         $item->explanation = $request->explanation;
         $item->price = $request->price;
-        $next_id =  $item->max('id') + 1;
-        $request->image->storeAs('public/images/items', $next_id . '.jpg'); //画像アップロード
-        $item->image = $next_id . '.jpg';
+        $file = $request->file('image');
+        $path = Storage::disk('s3')->putFile('/', $file, 'public');
+        $item->image = Storage::disk('s3')->url($path);
         $item->user_id = Auth::id();
         $item->status_id = $request->status;
         $item->name = $request->name;

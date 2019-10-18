@@ -32,7 +32,7 @@
                                 <figure class="">
                                     <div class="">
                                         <div class="pb-4">
-                                            <img src="{{asset("/storage/images/items/$item->image")}}"
+                                            <img src="{{$item->image}}"
                                                 alt="Thumbnail of &quot;{{$item->name}}&quot;" class="item-img mb-5">
                                         </div>
                                         <div class="item-box mt-4">

@@ -18,7 +18,7 @@
                             <div class="" style="">
                                 <div class="">
                                     <img alt="{{$item->name}}" class="img-fluid w-75"
-                                        src="{{asset("/storage/images/items/$item->image")}}" style="opacity: 1;">
+                                        src="{{$item->image}}" style="opacity: 1;">
                                 </div>
                             </div>
                         </div>
