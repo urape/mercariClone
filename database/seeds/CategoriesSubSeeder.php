@@ -20,7 +20,7 @@ class CategoriesSubSeeder extends Seeder
             'スーツ/フォーマル/ドレス', 'マタニティ', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 1,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -35,7 +35,7 @@ class CategoriesSubSeeder extends Seeder
             'レッグウェア', 'アンダーウェア', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 2,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -52,7 +52,7 @@ class CategoriesSubSeeder extends Seeder
             'ベビー家具/寝具/室内用品', 'おもちゃ', '行事/記念品', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 3,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -67,7 +67,7 @@ class CategoriesSubSeeder extends Seeder
             'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 4,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -80,7 +80,7 @@ class CategoriesSubSeeder extends Seeder
             '本', '漫画', '雑誌', 'CD', 'DVD/ブルーレイ', 'レコード', 'テレビゲーム',
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 5,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -94,7 +94,7 @@ class CategoriesSubSeeder extends Seeder
             '楽器/器材', 'コレクション', 'ミリタリー', '美術品', 'アート用品', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 6,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -108,7 +108,7 @@ class CategoriesSubSeeder extends Seeder
             'ボディケア', 'オーラルケア', 'リラクゼーション', 'ダイエット', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 7,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -122,7 +122,7 @@ class CategoriesSubSeeder extends Seeder
             '美容/健康', '美容/健康', '生活家電', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 8,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -136,7 +136,7 @@ class CategoriesSubSeeder extends Seeder
             'テニス', 'スノーボード', 'スキー', 'その他スポーツ', 'アウトドア', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 9,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -150,7 +150,7 @@ class CategoriesSubSeeder extends Seeder
             '趣味/おもちゃ', 'キッズ/ベビー', '素材/材料', '二次創作物', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 10,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -164,7 +164,7 @@ class CategoriesSubSeeder extends Seeder
             'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 11,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -178,7 +178,7 @@ class CategoriesSubSeeder extends Seeder
             'オートバイパーツ', 'オートバイアクセサリー'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 12,
                 'name' => $category,
                 'created_at' => Carbon::now(),
@@ -192,7 +192,7 @@ class CategoriesSubSeeder extends Seeder
             '文房具/事務用品', '事務/店舗用品', 'その他'
         ];
         foreach ($categories as $category) {
-            DB::table('categories')->insert([
+            DB::table('sub_categories')->insert([
                 'parent_id' => 13,
                 'name' => $category,
                 'created_at' => Carbon::now(),
