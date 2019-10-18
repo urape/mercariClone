@@ -11,26 +11,30 @@
             </div>
             <div class="container">
                 <div class="row">
-                    @foreach ($items as $item)
-                    <div class="col-12 col-md-2 mb-3 item p-0 mr-2">
-                        <div class="item-body">
-                            <a href="{{route('item',['item_id' => $item->id])}}">
-                                <figure class="">
-                                    <div class="">
-                                        <div class="pb-4">
-                                            <img src="{{$item->image}}"
-                                                alt="Thumbnail of &quot;{{$item->name}}&quot;" class="item-img mb-5">
+                    @if($items->count() === 0)
+                    <p class="col-12">{{$category->name}}の商品がありません。</p>
+                    @else
+                        @foreach ($items as $item)
+                        <div class="col-12 col-md-2 mb-3 item p-0 mr-2">
+                            <div class="item-body">
+                                <a href="{{route('item',['item_id' => $item->id])}}">
+                                    <figure class="">
+                                        <div class="">
+                                            <div class="pb-4">
+                                                <img src="{{$item->image}}" alt="Thumbnail of &quot;{{$item->name}}&quot;"
+                                                    class="item-img mb-5">
+                                            </div>
+                                            <div class="item-box mt-4">
+                                                <span>{{$item->name}}</span>
+                                                <p><span aria-label="Price">¥{{$item->price}}</span></p>
+                                            </div>
                                         </div>
-                                        <div class="item-box mt-4">
-                                            <span>{{$item->name}}</span>
-                                            <p><span aria-label="Price">¥{{$item->price}}</span></p>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </a>
+                                    </figure>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    @endforeach
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

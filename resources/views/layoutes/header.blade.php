@@ -39,7 +39,7 @@
                         <ul class="dropdown-menu">
                             @foreach($categories as $parent_category)
                             <li class="mb-1">
-                                <a href="/mercariClone/public/category/{{$parent_category["id"]}}"
+                                <a href="{{route('category', $parent_category["id"])}}"
                                     class="dropdown-item dropdown-list">{{$parent_category['name']}}</a>
                             </li>
                             @endforeach
