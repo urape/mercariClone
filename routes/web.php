@@ -38,4 +38,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('sell/edit/{item_id}', 'SellController@edit')->name('sell.edit');
     Route::post('sell/update/{item_id}', 'SellController@update')->name('sell.update');
     Route::post('item/delete', 'ItemController@delete')->name('item.delete');
+    Route::post('comment/create', 'CommentController@create')->name('comment.create');
 });

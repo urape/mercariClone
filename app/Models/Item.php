@@ -58,4 +58,9 @@ class Item extends Model
     {
         return $this->belongsTo('App\Models\Area');
     }
+
+    public function comment()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

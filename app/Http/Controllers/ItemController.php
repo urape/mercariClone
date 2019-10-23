@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Category;
-use App\Models\User;
+use App\Models\Comment;
 
 class ItemController extends Controller
 {
@@ -13,9 +13,11 @@ class ItemController extends Controller
     {
         $categories = Category::all();
         $item = Item::find($id);
+        $comments = Comment::where('item_id', $id)->get();
         return view('item.index', [
             'categories' => $categories,
             'item' => $item,
+            'comments' => $comments
         ]);
     }
 
