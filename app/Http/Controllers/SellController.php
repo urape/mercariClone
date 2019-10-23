@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\CreateItem;
+use App\Http\Requests\EditItem;
 use Carbon\Carbon;
 use App\Models\Item;
 use App\Models\Category;
@@ -79,14 +80,18 @@ class SellController extends Controller
         ]);
     }
 
-    public function update(CreateItem $request, $id)
+    public function update(EditItem $request, $id)
     {
         $item = Item::find($id);
         $item->name = $request->name;
         $item->explanation = $request->explanation;
         $item->price = $request->price;
-        Storage::delete($id . '.jpg');
-        $request->image->storeAs('public/images/items', $id . '.jpg'); //画像再アップロード
+        // 画像が未選択の場合は更新しない
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $item->image = Storage::disk('s3')->url($path);
+        }
         $item->status_id = $request->status;
         $item->name = $request->name;
         $item->category_id = $request->category;
