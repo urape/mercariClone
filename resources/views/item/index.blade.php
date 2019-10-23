@@ -17,7 +17,7 @@
                         <div class="">
                             <div class="" style="">
                                 <div class="">
-                                    <img alt="{{$item->name}}" class="img-fluid w-75"
+                                    <img alt="{{$item->name}}" class="owl-item img-fluid w-75"
                                         src="{{$item->image}}" style="opacity: 1;">
                                 </div>
                             </div>
