@@ -121,6 +121,12 @@ h3 {
     font-size: 14px;
 }
 
+.like-btn {
+    background-color: #EFEFEF;
+    color: #333333;
+    font-size: 14px;
+}
+
 .sell-header-img {
     width: 180px;
     height: 50px;

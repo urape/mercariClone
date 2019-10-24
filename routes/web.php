@@ -39,4 +39,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('sell/update/{item_id}', 'SellController@update')->name('sell.update');
     Route::post('item/delete', 'ItemController@delete')->name('item.delete');
     Route::post('comment/create', 'CommentController@create')->name('comment.create');
+    Route::post('like/create/{item_id}', 'LikeController@create')->name('like.create');
 });

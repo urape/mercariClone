@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Like;
 
 class ItemController extends Controller
 {
@@ -14,10 +15,12 @@ class ItemController extends Controller
         $categories = Category::all();
         $item = Item::find($id);
         $comments = Comment::where('item_id', $id)->get();
+        $likes = Like::where('item_id', $id)->count();
         return view('item.index', [
             'categories' => $categories,
             'item' => $item,
-            'comments' => $comments
+            'comments' => $comments,
+            'likes' => $likes
         ]);
     }
 

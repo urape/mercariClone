@@ -68,32 +68,16 @@
                 <span class="item-tax ml-2"> (税込)</span>
                 <span class="item-shipping-fee">送料込み</span>
             </div>
-            @if($item->user_id === Auth::id())
-            <button type="button" class="btn btn-danger btn-lg w-75" 
-                onclick="location.href='{{ route('sell.edit', ['item_id' => $item->id]) }}'">
-                商品の編集
-            </button>
-            <p>or</p>
-            <button type="button" class="btn btn-secondary btn-lg w-75" data-toggle="modal" data-target="#deleteItemModal">
-                この商品を削除する
-            </button>
-            @include('item.delete_modal')
-            @elseif($item->buyer_id === Auth::id() and Auth::check())
-            <button type="button" class="btn btn-secondary btn-lg disabled w-50">
-                購入済み
-            </button>
-            @elseif($item->buyer_id)
-            <button type="button" class="btn btn-secondary btn-lg disabled w-50">
-                売り切れました
-            </button>
-            @else
-            <button type="button" class="btn btn-danger btn-lg w-75"
-                onclick="location.href='{{ route('buy', ['item_id' => $item->id]) }}'">
-                購入画面に進む
-            </button>
-            @endif
+            @include('item.button')
             <div class="mt-4 ml-5 w-75 text-left mx-auto">
-                {!! nl2br(e($item->explanation))!!}
+                {!! nl2br(e($item->explanation)) !!}
+            </div>
+            <div class="text-left mx-auto w-75 mt-1">
+                <button class="ml-1 mr-1 rounded-pill btn like-btn" id="like">
+                    <i class="far fa-heart"></i>
+                    <span>いいね!</span>
+                    <span>{{$likes}}</span>
+                </button>
             </div>
         </div>
     </div>
@@ -101,3 +85,19 @@
 </div>
 @endsection
 @include('layoutes.footer')
+@section('script')
+<script>
+    $(function(){
+        $('#like').on('click', function() {
+            console.log(this);
+            $.ajax({
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                url: "{{ route('like.create', ['item_id' => $item->id]) }}",
+                type: 'POST',
+                data: { 'item_id': {{ $item->id }} },
+                dataType:"json",
+            })
+        });
+    });
+</script>
+@endsection
