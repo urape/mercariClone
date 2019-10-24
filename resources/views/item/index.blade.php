@@ -97,12 +97,6 @@
                 data: { 'item_id': {{ $item->id }} },
                 dataType:"json",
             })
-            .done(function(data) {
-                alert(JSON.stringify(data));
-            })
-            .fail(function(data) {
-                alert('失敗');
-            });
         });
     });
 </script>

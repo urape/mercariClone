@@ -14,10 +14,5 @@ class LikeController extends Controller
         $like->user_id = Auth::id();
         $like->item_id = $request->item_id;
         $like->save();
-        
-        return response()->json([
-            'code' => '成功',
-            'item' => $request->item_id
-        ]);
     }
 }
