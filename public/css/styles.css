@@ -336,3 +336,7 @@ h3 {
     height: 360px;
     object-fit: cover;
 }
+
+.heart{
+    color: #EA352D;
+}

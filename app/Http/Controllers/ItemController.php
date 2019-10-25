@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\Category;
 use App\Models\Comment;
@@ -16,11 +17,13 @@ class ItemController extends Controller
         $item = Item::find($id);
         $comments = Comment::where('item_id', $id)->get();
         $likes = Like::where('item_id', $id)->count();
+        $liked = Like::Where('item_id', $id)->where('user_id', Auth::id())->count();
         return view('item.index', [
             'categories' => $categories,
             'item' => $item,
             'comments' => $comments,
-            'likes' => $likes
+            'likes' => $likes,
+            'liked' => $liked
         ]);
     }
 

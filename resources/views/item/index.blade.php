@@ -74,9 +74,9 @@
             </div>
             <div class="text-left mx-auto w-75 mt-1">
                 <button class="ml-1 mr-1 rounded-pill btn like-btn" id="like">
-                    <i class="far fa-heart"></i>
+                    <i class="fa-heart @if($liked === 1) fas heart @else far @endif"></i>
                     <span>いいね!</span>
-                    <span>{{$likes}}</span>
+                    <span id="like-count">{{$likes}}</span>
                 </button>
             </div>
         </div>
@@ -89,7 +89,7 @@
 <script>
     $(function(){
         $('#like').on('click', function() {
-            console.log(this);
+            let $this = $(this)
             $.ajax({
                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
                 url: "{{ route('like.create', ['item_id' => $item->id]) }}",
@@ -97,6 +97,22 @@
                 data: { 'item_id': {{ $item->id }} },
                 dataType:"json",
             })
+            .done(function(data) {
+                console.log('成功');
+                console.log($this.children('i'));
+                console.log(data);
+                if (data["liked"] === false) {
+                    $this.children('i').removeClass('fas heart');
+                    $this.children('i').toggleClass('far'); //空洞ハート
+                } else {
+                    $this.children('i').removeClass('far'); 
+                    $this.children('i').toggleClass('fas heart'); //塗りつぶしハート
+                }
+                $this.children('#like-count').html(data["likes"])
+            })
+            .fail(function(data) {
+                console.log('失敗');
+            });
         });
     });
 </script>
