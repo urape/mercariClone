@@ -23,7 +23,7 @@
                 <li class="my-item-list">
                     <a href="{{route('item',$item->id)}}" class="b-link">
                         <figure class="my-item-list">
-                            <img src="{{asset("/storage/images/items/$item->image")}}" alt="" class="my-item-img">
+                            <img src="{{asset("$item->image")}}" alt="" class="my-item-img">
                             {{$item->name}}
                         </figure>
                     </a>
