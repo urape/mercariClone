@@ -3,7 +3,7 @@
         <ul class="list-group">
             <h3><a href="{{route('mypage')}}" class="my-link">マイページ</a></h3>
             <li class="list-group-item">
-                <a href="{{route('mypage')}}" class="my-link">いいね！一覧</a>
+                <a href="{{route('like')}}" class="my-link">いいね！一覧</a>
             </li>
             <li class="list-group-item">
                 <a href="{{route('sell')}}" class="my-link">出品する</a></li>

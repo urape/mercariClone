@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Auth;
 use App\Models\Item;
+use App\Models\Like;
 
 class MyPageController extends Controller
 {
@@ -16,6 +17,20 @@ class MyPageController extends Controller
         return view('mypage.index', [
             'categories' => $categories,
             'user' => $user,
+        ]);
+    }
+
+    public function like()
+    {
+        $categories = Category::all();
+        $user = Auth::user();
+        $likes = Like::where('user_id', $user->id)
+            ->orderBy('id', 'desc')
+            ->paginate(4);
+        return view('mypage.like', [
+            'categories' => $categories,
+            'user' => $user,
+            'likes' => $likes
         ]);
     }
 
