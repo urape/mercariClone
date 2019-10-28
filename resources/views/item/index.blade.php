@@ -98,9 +98,6 @@
                 dataType:"json",
             })
             .done(function(data) {
-                console.log('成功');
-                console.log($this.children('i'));
-                console.log(data);
                 if (data["liked"] === false) {
                     $this.children('i').removeClass('fas heart');
                     $this.children('i').toggleClass('far'); //空洞ハート
@@ -110,9 +107,6 @@
                 }
                 $this.children('#like-count').html(data["likes"])
             })
-            .fail(function(data) {
-                console.log('失敗');
-            });
         });
     });
 </script>
